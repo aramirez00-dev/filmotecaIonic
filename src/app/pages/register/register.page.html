@@ -1,0 +1,44 @@
+<ion-content class="register-content">
+  <div class="register-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <ion-item class="input-item">
+        <ion-label position="floating" class="input-label">Nombre</ion-label>
+        <ion-input formControlName="name" type="text" class="input-field"></ion-input>
+      </ion-item>
+      <ion-item class="input-item">
+        <ion-label position="floating" class="input-label">Fecha de Nacimiento</ion-label>
+        <ion-input formControlName="birthdate" type="date" class="input-field"></ion-input>
+      </ion-item>
+      <ion-item class="input-item">
+        <ion-label position="floating" class="input-label">Nombre de Usuario</ion-label>
+        <ion-input formControlName="username" type="text" class="input-field"></ion-input>
+      </ion-item>
+      <ion-item class="input-item">
+        <ion-label position="floating" class="input-label">Email</ion-label>
+        <ion-input formControlName="email" type="email" class="input-field"></ion-input>
+      </ion-item>
+      <ion-item class="input-item">
+        <ion-label position="floating" class="input-label">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password" class="input-field"></ion-input>
+      </ion-item>
+      <div class="requirements-list">
+        <ion-item [class.valid]="isBirthdateValid()" [class.invalid]="!isBirthdateValid()">
+          <ion-icon [name]="isBirthdateValid() ? 'checkmark-circle' : 'close-circle'" slot="start"></ion-icon>
+          <ion-label>Debes tener más de 16 años</ion-label>
+        </ion-item>
+        <ion-item [class.valid]="isUsernameValid()" [class.invalid]="!isUsernameValid()">
+          <ion-icon [name]="isUsernameValid() ? 'checkmark-circle' : 'close-circle'" slot="start"></ion-icon>
+          <ion-label>El nombre de usuario debe tener más de 5 caracteres</ion-label>
+        </ion-item>
+        <ion-item [class.valid]="isPasswordValid()" [class.invalid]="!isPasswordValid()">
+          <ion-icon [name]="isPasswordValid() ? 'checkmark-circle' : 'close-circle'" slot="start"></ion-icon>
+          <ion-label>La contraseña debe tener más de 5 caracteres, una mayúscula, una minúscula y un número</ion-label>
+        </ion-item>
+      </div>
+      <ion-button expand="full" type="submit" [disabled]="!registerForm.valid" class="register-button">Registrarse</ion-button>
+    </form>
+    <div class="login-link">
+      <a (click)="refresh()" routerLink="/login" style="font-weight: bold;">¿Ya tienes una cuenta? Inicia sesión</a>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">filmotecaPrex</string>
+    <string name="title_activity_main">filmotecaPrex</string>
+    <string name="package_name">prex.filmoteca.app</string>
+    <string name="custom_url_scheme">prex.filmoteca.app</string>
+</resources>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Rate Movie</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="rating-container">
+    <ion-row>
+      <ion-col *ngFor="let star of starCount">
+        <ion-icon
+          [name]="star <= currentRating ? 'star' : 'star-outline'"
+          (click)="selectRating(star)"
+          size="large">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

@@ -1,0 +1,80 @@
+:host {
+  ion-content {
+    --background: #1a001a;
+    color: #ffffff;
+  }
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.poster-container {
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+ion-header {
+  ion-toolbar {
+    --background: #2e002e;
+  }
+}
+
+ion-card {
+  --background: #2e0032;
+  color: #ffffff;
+  width: 100%;
+}
+
+ion-card-title {
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+ion-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ion-button.watched {
+  --background: #006400;
+  --color: #ffffff;
+}
+
+ion-button.not-watched {
+  --background: #989898;
+  --color: #000000;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  ion-icon {
+    cursor: pointer;
+    color: #ffd700;
+    margin: 0 5px;
+  }
+}
+
+p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+}

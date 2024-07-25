@@ -1,0 +1,50 @@
+:host {
+  ion-content {
+    --background: #1a001a;
+    color: #ffffff;
+  }
+}
+
+ion-header {
+  ion-toolbar {
+    --background: #2e002e;
+  }
+
+  ion-buttons {
+    ion-icon {
+      color: #ffffff;
+      font-size: 24px;
+    }
+  }
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 15px;
+  --background: #2e0032;
+  color: #ffffff;
+}
+
+.profile-card h2 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.profile-card p {
+  font-size: 1em;
+  margin: 0;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+}

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goHome()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ movie?.name || 'Loading...' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="movie-details" *ngIf="movie; else loading">
+
+    <div class="poster-container">
+      <ion-thumbnail class="thumbnail">
+        <img [src]="movie.mainPoster" alt="{{ movie.name }}">
+      </ion-thumbnail>
+    </div>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-button
+          expand="full"
+          [ngClass]="{'watched': vistaStatus, 'not-watched': !vistaStatus}"
+          (click)="toggleVista()"
+        >
+          {{ vistaStatus ? 'Vista' : 'No Vista' }}
+        </ion-button>
+        <ion-button
+          expand="full"
+          (click)="presentPopover($event)"
+          [disabled]="!vistaStatus"
+        >
+          Dar puntuación
+        </ion-button>
+        <ion-button expand="full" (click)="editInfo()">Editar info</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <p><strong>Sinopsis:</strong> {{ movie.synopsis }}</p>
+        <p><strong>Puntuación promedio:</strong> {{ movie.avgUserScore }}</p>
+        <p><strong>Géneros:</strong> {{ movie.genres.join(', ') }}</p>
+        <p><strong>Duración:</strong> {{ movie.duration }} mins</p>
+        <p><strong>Fecha de Estreno:</strong> {{ movie.releaseDate }}</p>
+        <p><strong>Directores:</strong> {{ movie.directors.join(', ') }}</p>
+        <p><strong>Actores:</strong> {{ movie.actors.join(', ') }}</p>
+        <p><strong>Escritores:</strong> {{ movie.writers.join(', ') }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #loading>
+    <div class="loading-message">Loading...</div>
+  </ng-template>
+</ion-content>

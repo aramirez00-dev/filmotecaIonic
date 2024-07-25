@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/movie"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Movie</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="save" (click)="saveChanges()" class="save-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="saveChanges()" #editMovieForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">Movie Name</ion-label>
+      <ion-input [(ngModel)]="movieName" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Sinopsis</ion-label>
+      <ion-textarea [(ngModel)]="movieSynopsis" name="synopsis" required></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Puntuación promedio</ion-label>
+      <ion-input type="number" [(ngModel)]="movieAvgUserScore" name="avgUserScore" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Géneros</ion-label>
+      <ion-input [(ngModel)]="genresInput" (ngModelChange)="updateGenres($event)" name="genres"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Duración</ion-label>
+      <ion-input type="number" [(ngModel)]="movieDuration" name="duration"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha de Estreno</ion-label>
+      <ion-input type="date" [(ngModel)]="movieReleaseDate" name="releaseDate" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Directores</ion-label>
+      <ion-input [(ngModel)]="directorsInput" (ngModelChange)="updateDirectors($event)" name="directors"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Actores</ion-label>
+      <ion-input [(ngModel)]="actorsInput" (ngModelChange)="updateActors($event)" name="actors"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Guionistas</ion-label>
+      <ion-input [(ngModel)]="writersInput" (ngModelChange)="updateWriters($event)" name="writers"></ion-input>
+    </ion-item>
+  </form>
+</ion-content>

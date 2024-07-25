@@ -1,0 +1,21 @@
+.rating-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+ion-icon {
+  font-size: 40px;
+  cursor: pointer;
+  color: #ccc;
+  margin: 0 5px;
+}
+
+.star-filled {
+  color: #f5a623;
+}
+
+.rating-text {
+  text-align: center;
+  font-size: 18px;
+}

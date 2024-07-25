@@ -1,0 +1,36 @@
+:host {
+  ion-content {
+    --background: #1a001a;
+    color: #ffffff;
+    padding: 0;
+  }
+
+  ion-list {
+    padding: 0;
+  }
+
+  ion-item {
+    margin: 0;
+  }
+}
+
+ion-header {
+  ion-toolbar {
+    --background: #2e002e;
+  }
+}
+
+.thumbnail {
+  width: 75px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-item{
+  --background: #1a001a;
+}
+
+ion-label h2 {
+  color: #ffffff;
+  font-weight: bold;
+}

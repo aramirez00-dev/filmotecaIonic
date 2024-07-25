@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Perfil de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="profile-details" *ngIf="currentUser; else loading">
+    <ion-card class="profile-card">
+      <ion-card-content>
+        <h2>Nombre</h2>
+        <p>{{ currentUser.name }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="profile-card">
+      <ion-card-content>
+        <h2>Fecha de Nacimiento</h2>
+        <p>{{ currentUser.birthdate }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="profile-card">
+      <ion-card-content>
+        <h2>Nombre de Usuario</h2>
+        <p>{{ currentUser.username }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="profile-card">
+      <ion-card-content>
+        <h2>Email</h2>
+        <p>{{ currentUser.email }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #loading>
+    <div class="loading-message">Loading...</div>
+  </ng-template>
+</ion-content>

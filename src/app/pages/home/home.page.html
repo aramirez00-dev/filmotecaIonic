@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Películas en tendencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closeMenu()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/profile">
+        <ion-icon slot="start" name="person"></ion-icon>
+        <ion-label>Mi Perfil</ion-label>
+      </ion-item>
+      <ion-item (click)="logOut()">
+        <ion-icon slot="start" name="log-out"></ion-icon>
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content" fullscreen>
+  <ion-list>
+    <ion-item class="movie-item" *ngFor="let movie of movies" [routerLink]="['/movie', movie.id]">
+      <ion-thumbnail slot="start" class="thumbnail">
+        <img [src]="movie.mainPoster">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ movie.name }}</h2>
+        <p>{{ movie.synopsis | truncate: 200 }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
